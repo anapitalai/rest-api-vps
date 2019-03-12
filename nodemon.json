@@ -1,0 +1,6 @@
+{
+    "env":{
+        "monngo_password":"p@ss",
+        "JWT_KEY":"secret"
+    }
+}
