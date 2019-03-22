@@ -133,11 +133,11 @@ router.get('/',(req,res,next)=>{
     });
 });**/
 
-
+ var ObjectId = require('mongodb').ObjectID;
 //get single alumni route
 router.get('/:memberId',(req,res,next)=>{
     const id=req.params.memberId;
-    Teacher.findById(id)
+    Teacher.findById(ObjectId(id))
     .select('_id name username nid avatarImage')
     .exec()
     .then(doc=>{

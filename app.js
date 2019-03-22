@@ -17,7 +17,8 @@ const uploadRoutes = require('./api/routes/uploads');
 //    useMongoClient:true
 //});
 
-const mongodbUri = 'mongodb://localhost:27017/education';
+const mongodbUri = 'mongodb://anapitalai:noGoZone@localhost:27017/education';
+//const mongodbUri='mongodb://anapitalai:noGoZone19@ds127300.mlab.com:27300/nictc';
 const mongooseUri = uriUtil.formatMongoose(mongodbUri);
 const dbOptions = {};
 

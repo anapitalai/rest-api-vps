@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const teacherSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    //_id:{type:String,required:true},
     name:{type: String,required:true},
     username:{type:String,required:true},
     //dob: {type: Date,required:false},
