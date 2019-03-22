@@ -37,10 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 
-
-
-
-/**app.use((req,res,next)=>{
+app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Headers','Origin,X-Requested-With,content-type,Authorization');
     res.header('Accept','application/json');
@@ -49,8 +46,8 @@ app.use(bodyParser.urlencoded({extended:false}));
         return res.status(200).json({});
     }
     next();
-});**/
-
+});
+/** 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods','PUT,POST,PATCH,DELETE,GET');
@@ -61,7 +58,7 @@ app.use(function (req, res, next) {
   //res.setHeader('Accept', "multipart/form-data");
   next();
 });
-
+**/
 
 app.use('/teachers',alumniRoutes);
 app.use('/users',userRoutes);
