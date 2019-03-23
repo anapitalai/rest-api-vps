@@ -38,7 +38,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 app.use((req,res,next)=>{
-    res.header('Access-Control-Allow-Origin','*');
+  const allowedOrigins = ['https://tenavartovo.chervicontraining.com/teacher', 'https://tenavartovo.chervicontraining.com/users','https://tenavartovo.chervicontraining.com/dashboard'];
+  const origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+    //res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Headers','Origin,X-Requested-With,content-type,Authorization');
     res.header('Accept','application/json');
     if(req.method==='OPTIONS'){
