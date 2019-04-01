@@ -190,7 +190,7 @@ router.get('/:memberId',(req,res,next)=>{
 
 router.delete('/:memberId',(req,res,next)=>{
     const id=req.params.memberId;
-    Teacher.deleteOne({_id:id})
+    Teacher.remove({_id:id})
     .exec()
     .then(result=>{
        res.status(200).json(result);
