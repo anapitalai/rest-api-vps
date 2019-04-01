@@ -137,7 +137,7 @@ router.get('/',(req,res,next)=>{
 //get single alumni route
 router.get('/:memberId',(req,res,next)=>{
     const _id=req.params.memberId;
-    Teacher.findByIdAndUpdate(_id)
+    Teacher.findById(_id)
     .select('_id name username nid avatarImage')
     .exec()
     .then(doc=>{
