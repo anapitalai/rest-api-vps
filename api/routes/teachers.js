@@ -123,21 +123,12 @@ router.get('/',(req,res,next)=>{
 
 });
 
-/**router.post('/',(req,res)=>{
-    const teacher = new Teacher(req.body);
-    teacher.save((err,teacher)=>{
-      if(err){
-          res.status(400).json(err);
-      }
-      res.json(teacher);
-    });
-});**/
 
  //var ObjectId = require('mongodb').ObjectID;
 //get single alumni route
 router.get('/:memberId',(req,res,next)=>{
     const _id=req.params.memberId;
-    Teacher.find({_id:_id})
+    Teacher.findById({_id})
     .select('_id name username nid avatarImage')
     .exec()
     .then(doc=>{
