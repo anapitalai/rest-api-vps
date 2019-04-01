@@ -64,7 +64,7 @@ router.get('/',(req,res,next)=>{
                 //avatarImage:doc.avatarImage,
                 updatedAt:doc.updatedAt,
                 createdAt:doc.createdAt,
-                avatarImage:'http://localhost:3007/'+docs.avatarImage,
+                avatarImage:'https://api.chervicontraining.com/'+docs.avatarImage,
             request:{
               type:'GET',
               url:'http://localhost:3007/teachers/' + docs._id
@@ -133,11 +133,11 @@ router.get('/',(req,res,next)=>{
     });
 });**/
 
- var ObjectId = require('mongodb').ObjectID;
+ //var ObjectId = require('mongodb').ObjectID;
 //get single alumni route
 router.get('/:memberId',(req,res,next)=>{
-    const id=req.params.memberId;
-    Teacher.findById(ObjectId(id))
+    const _id=req.params.memberId;
+    Teacher.findByIdAndUpdate(_id)
     .select('_id name username nid avatarImage')
     .exec()
     .then(doc=>{
